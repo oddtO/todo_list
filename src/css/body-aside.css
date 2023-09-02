@@ -1,0 +1,32 @@
+aside ul {
+  width: 70%;
+}
+
+aside li {
+  display: flex;
+  align-items: center;
+  border: 2px solid #0000e6;
+  border-radius: 20px;
+  width: 100%;
+  min-height: 30px;
+}
+
+aside .project {
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  padding-left: 5px;
+}
+
+aside .delete-button {
+  appearance: none;
+  outline: none;
+  border: none;
+  height: 100%;
+  color: #960000;
+  background-color: transparent;
+}
+
+aside > * {
+  margin-top: 20px;
+}

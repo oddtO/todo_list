@@ -1,0 +1,26 @@
+body {
+  height: 100vh;
+  display: grid;
+  grid-template: 60px auto / 1fr 3fr;
+}
+
+body > header {
+  grid-column: 1 / -1;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+  font-size: 30px;
+}
+
+body > aside {
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body > main {
+  background-color: #fafa00;
+}
