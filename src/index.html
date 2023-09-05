@@ -8,8 +8,17 @@
   <body>
     <header><a href="index.html">Todo Planner</a></header>
     <aside>
-      <button class="add-button">Add new project</button>
+      <form action="">
+        <input type="text" placeholder="project name" /><input
+          type="submit"
+          value="add project"
+        />
+      </form>
       <ul>
+        <li data-selected="true">
+          <div class="project">default</div>
+          <button class="delete-button">X</button>
+        </li>
         <li>
           <div class="project">new project</div>
           <button class="delete-button">X</button>

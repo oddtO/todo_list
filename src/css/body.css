@@ -4,6 +4,12 @@ body {
   grid-template: 60px auto / 1fr 3fr;
 }
 
+button,
+input[type=submit]
+{
+  cursor: pointer;
+}
+
 body > header {
   grid-column: 1 / -1;
   background-color: black;

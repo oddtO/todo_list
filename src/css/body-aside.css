@@ -1,30 +1,50 @@
 aside ul {
   width: 70%;
+  display: grid;
+  gap: 10px;
 }
 
 aside li {
   display: flex;
   align-items: center;
-  border: 2px solid #0000e6;
+  border: 2px solid #6e6ef0;
   border-radius: 20px;
   width: 100%;
   min-height: 30px;
 }
 
+aside li[data-selected="true"] {
+  background-color: #aaa0ff;
+}
+
+aside > form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 aside .project {
   flex: auto;
   display: flex;
   justify-content: center;
   padding-left: 5px;
+  color: #505050;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 aside .delete-button {
   appearance: none;
+  padding-right: 10px;
+  font-size: 20px;
   outline: none;
   border: none;
   height: 100%;
-  color: #960000;
+  color: #6e6e14;
   background-color: transparent;
+}
+
+aside .delete-button:hover {
+  color: #960000;
 }
 
 aside > * {
