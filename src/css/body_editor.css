@@ -1,0 +1,81 @@
+body .editor {
+  position: absolute;
+  background-color: white;
+  left: 0;
+  right: 0;
+  height: 85vh;
+  width: 40vw;
+  margin: auto;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+  overflow: auto;
+}
+
+.editor::after {
+  content: "🗙";
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #be0000;
+  width: 20px;
+  height: 20px;
+}
+.editor .add-cancel-button {
+  width: 30px;
+  align-self: end;
+  border: none;
+}
+
+body .editor {
+  visibility: hidden;
+}
+
+body.popup-shown .editor {
+  visibility: visible;
+}
+
+body.popup-shown .blurrable {
+  filter: blur(2px);
+}
+
+.editor input[type="submit"] {
+  width: 60%;
+  height: 50px;
+  margin: auto;
+}
+.editor label {
+  display: flex;
+  flex-direction: column;
+}
+
+.editor > * {
+  margin-bottom: 20px;
+}
+
+.editor > label[for="title"] {
+  width: min(90%, 400px);
+}
+
+.editor > label[for="title"] > input {
+  height: 30px;
+}
+
+.editor > label[for="due-date"],
+.editor > label[for="priority"] {
+  width: min(100%, 200px);
+}
+
+.editor > label[for="description"] {
+  flex: auto;
+  min-height: 200px;
+}
+.editor > label[for="description"] > textarea {
+  flex: auto;
+  resize: none;
+}

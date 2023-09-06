@@ -1,16 +1,26 @@
 body {
   height: 100vh;
+}
+
+body > .blurrable {
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template: 60px auto / 1fr 3fr;
 }
 
+body.popup-shown .blurrable {
+  pointer-events: none;
+  user-select: none;
+  filter: blur(2px) brightness(0.2);
+}
+
 button,
-input[type=submit]
-{
+input[type="submit"] {
   cursor: pointer;
 }
 
-body > header {
+body header {
   grid-column: 1 / -1;
   background-color: black;
   color: white;
@@ -20,13 +30,14 @@ body > header {
   font-size: 30px;
 }
 
-body > aside {
+body aside {
   /* background-color: blue; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
 }
 
-body > main {
+body main {
   background-color: #fafa00;
 }

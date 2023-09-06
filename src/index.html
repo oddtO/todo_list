@@ -5,26 +5,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body>
-    <header><a href="index.html">Todo Planner</a></header>
-    <aside>
-      <form action="">
-        <input type="text" placeholder="project name" /><input
-          type="submit"
-          value="add project"
-        />
-      </form>
-      <ul>
-        <li data-selected="true">
-          <div class="project">default</div>
-          <button class="delete-button">X</button>
-        </li>
-        <li>
-          <div class="project">new project</div>
-          <button class="delete-button">X</button>
-        </li>
-      </ul>
-    </aside>
-    <main></main>
+  <body class="popup-shown">
+    <div class="blurrable">
+      <header><a href="index.html">Todo Planner</a></header>
+      <aside>
+        <form action="">
+          <input type="text" placeholder="project name" /><input
+            type="submit"
+            value="add project"
+          />
+        </form>
+        <ul>
+          <li data-selected="true">
+            <div class="project">default</div>
+            <button class="delete-button">X</button>
+          </li>
+          <li>
+            <div class="project">new project</div>
+            <button class="delete-button">X</button>
+          </li>
+        </ul>
+      </aside>
+      <main>
+        <button class="add-todo">add todo</button>
+        <ul class="todo-list"></ul>
+      </main>
+    </div>
+    <form action="" class="editor">
+      <label for="title"
+        >Title:<input type="text" name="title" id="title"
+      /></label>
+
+      <label for="due-date"
+        >Due date:<input type="date" name="due-date" id="due-date"
+      /></label>
+
+      <label for="priority"
+        >Priority:<input type="number" name="priority" id="priority"
+      /></label>
+      <label for="description"
+        >Description:<textarea name="description" id="description"></textarea>
+      </label>
+
+      <input type="submit" value="Done" />
+    </form>
   </body>
 </html>
