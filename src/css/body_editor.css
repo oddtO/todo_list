@@ -23,6 +23,23 @@ body.popup-shown .editor {
   opacity: 1;
 }
 
+.editor.new ul {
+  display: none;
+}
+
+.editor :is(.cancel-edit, .save-edit) {
+  display: none;
+}
+
+.editor label.on-edit :is(.cancel-edit, .save-edit) {
+	display: block;
+}
+
+.editor label.on-edit .edit {
+	display: none;
+}
+
+
 @media screen and (max-width: 700px) {
   body .editor {
     width: 80vw !important;
@@ -100,11 +117,17 @@ body.popup-shown .blurrable {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 35px;
+  font-size: 30px;
   height: 100%;
 }
 
-.editor ul > span {
+.editor button {
+  font-size: inherit;
+  background-color: transparent;
+  border: none;
+}
+
+.editor ul > button {
   position: relative;
   top: -4px;
 }
