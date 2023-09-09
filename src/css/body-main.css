@@ -1,0 +1,8 @@
+main > .add-todo {
+  width: 40%;
+
+}
+
+main > * {
+  margin-top: 10px;
+}

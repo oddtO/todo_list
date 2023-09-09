@@ -28,21 +28,26 @@
       </aside>
       <main>
         <button class="add-todo">add todo</button>
-        <ul class="todo-list"></ul>
+        <ul class="todo-list">
+          <div class="todo-preview-card"><h2>Lorem ipsum dolor sit.</h2></div>
+        </ul>
       </main>
     </div>
     <form action="" class="editor">
+      <span>
+        Icons by
+        <a target="_blank" href="https://icons8.com">Icons8</a>
+      </span>
       <label for="title"
         ><h2 class="title">Title:</h2>
         <div>
-          <input type="text" name="title" id="title" />
+          <input type="text" name="title" id="title"/>
           <ul>
-            <button class="edit">x</button>
-            <button class="cancel-edit">x</button>
-            <button class="save-edit">x</button>
-          </ul>
-        </div></label
-      >
+            <button class="edit"><img /></button>
+						<button class="cancel-edit"><img/></button>
+						<button class="save-edit"><img/></button>
+          </ul></div
+      ></label>
 
       <label for="due-date"
         ><h2 class="title">Due date:</h2>
@@ -50,9 +55,9 @@
           <input type="date" name="due-date" id="due-date" />
 
           <ul>
-            <button class="edit">x</button>
-            <button class="cancel-edit">x</button>
-            <button class="save-edit">x</button>
+						<button class="edit"><img/></button>
+						<button class="cancel-edit"><img/>/button>
+							<button class="save-edit"><img/></button>
           </ul>
         </div></label
       >
@@ -63,26 +68,36 @@
           <input type="number" name="priority" id="priority" />
 
           <ul>
-            <button class="edit">x</button>
-            <button class="cancel-edit">x</button>
-            <button class="save-edit">x</button>
+						<button class="edit"><img/></button>
+						<button class="cancel-edit"><img/></button>
+						<button class="save-edit"><img/></button>
           </ul>
         </div></label
       >
+      <label for="is-completed"
+        ><input type="checkbox" name="is-completed" id="is-completed" />is
+        completed</label
+      >
+
       <label for="description"
         ><h2 class="title">Description:</h2>
         <div>
           <textarea name="description" id="description"></textarea>
 
           <ul>
-            <button class="edit">x</button>
-            <button class="cancel-edit">x</button>
-            <button class="save-edit">x</button>
+						<button class="edit"><img/></button>
+						<button class="cancel-edit"><img/></button>
+						<button class="save-edit"><img/></button>
           </ul>
         </div>
       </label>
 
-      <input type="submit" value="Done" />
+      <div>
+        <input type="submit" value="Done" /><input
+          type="submit"
+          value="Delete the todo"
+        />
+      </div>
     </form>
   </body>
 </html>
