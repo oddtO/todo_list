@@ -27,7 +27,8 @@ main .todo-preview-card {
   border: 1px solid #000;
   /* outline: 1px solid orange; */
   cursor: pointer;
-  box-shadow: 2px 2px 5px #787878;
+  --box-shadow-color: #787878;
+  box-shadow: 2px 2px 5px var(--box-shadow-color);
 }
 
 .todo-preview-card > .title {
@@ -97,4 +98,40 @@ main .todo-preview-card {
   to {
     top: -15px;
   }
+}
+
+.todo-list [data-priority="low"].todo-preview-card {
+  /* border-color: blue; */
+  border: 1px solid blue;
+  color: blue;
+  --box-shadow-color: #0078b4;
+}
+
+.todo-list [data-priority="normal"].todo-preview-card {
+  /* border-color: black; */
+  border: 1px solid black;
+  color: black;
+}
+
+.todo-list [data-priority="high"].todo-preview-card {
+  /* border-color: violet; */
+  border: 1px solid violet;
+  color: violet;
+  --box-shadow-color: #500050;
+}
+
+.todo-list [data-status="completed"].todo-preview-card {
+  border-color: #00c800 !important;
+  --box-shadow-color: #008c00;
+}
+
+.todo-list
+  [data-status="completed"].todo-preview-card
+  > .action-buttons-wrapper {
+  display: none;
+}
+
+.todo-list [data-status="failed"].todo-preview-card {
+  border-color: #c80000 !important;
+  --box-shadow-color: #8c0000;
 }
