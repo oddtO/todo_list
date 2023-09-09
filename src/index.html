@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body >
+  <body class="popup-shown">
     <div class="blurrable">
       <header><a href="index.html">Todo Planner</a></header>
       <aside>
@@ -80,8 +80,12 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Id aliquam odit minima,
       <label for="priority"
         ><h2 class="title">Priority:</h2>
         <div>
-          <input type="number" name="priority" id="priority" />
-
+          <!-- <input type="number" name="priority" id="priority" /> -->
+		<select name="priority" id="priority">
+			<option value="low">Low</option>
+			<option value="normal">Normal</option>
+			<option value="high">High</option>
+		</select>
           <ul>
 						<button class="edit"><img/></button>
 						<button class="cancel-edit"><img/></button>

@@ -170,6 +170,13 @@ body.popup-shown .blurrable {
   width: min(100%, 250px);
 }
 
+.editor select {
+  width: 100%;
+  height: 50%;
+  font-size: 100%;
+  outline: none;
+}
+
 .editor > label[for="is-completed"] {
   flex-direction: row;
   align-items: center;
@@ -184,6 +191,7 @@ body.popup-shown .blurrable {
   height: 100%;
   resize: none;
   flex: auto;
+  padding: 5px;
 }
 
 button[class$="edit"] > img {
