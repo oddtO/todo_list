@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body class="popup-shown">
+  <body >
     <div class="blurrable">
       <header><a href="index.html">Todo Planner</a></header>
       <aside>
@@ -29,7 +29,22 @@
       <main>
         <button class="add-todo">add todo</button>
         <ul class="todo-list">
-          <div class="todo-preview-card"><h2>Lorem ipsum dolor sit.</h2></div>
+          <div class="todo-preview-card">
+
+	<h2 class="title" >Lorem ipsum dolor sit.</h2>
+
+	<div class="description-short">
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Id aliquam odit minima, a expedita quasi consectetur, ipsum libero animi repellat sit facilis, quaerat repudiandae veritatis nostrum. Voluptatem, nam. Soluta, tempora!
+						</div>
+
+
+
+			<time class="due-date">2 february 2022</time>
+
+					<div class="action-buttons-wrapper" title="mark as complete"><button><img/></button></div>
+
+</div>
         </ul>
       </main>
     </div>
@@ -93,7 +108,7 @@
       </label>
 
       <div>
-        <input type="submit" value="Done" /><input
+        <input type="submit" value="Done" /><input class="delete-todo"
           type="submit"
           value="Delete the todo"
         />

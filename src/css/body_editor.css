@@ -39,6 +39,7 @@ body.popup-shown .editor {
   display: block;
 }
 
+.editor.new .delete-todo,
 .editor :is(.cancel-edit, .save-edit),
 .editor.new > label[for="is-completed"],
 .editor.new ul,

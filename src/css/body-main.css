@@ -1,8 +1,100 @@
 main > .add-todo {
   width: 40%;
-
 }
 
 main > * {
   margin-top: 10px;
+}
+
+main > .todo-list {
+  flex: auto;
+  align-self: stretch;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main .todo-preview-card {
+  --square-size: 20em;
+  width: var(--square-size);
+  height: var(--square-size);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  font-size: calc(12px + 0.5vw);
+  border: 1px solid #000;
+  /* outline: 1px solid orange; */
+  cursor: pointer;
+  box-shadow: 2px 2px 5px #787878;
+}
+
+.todo-preview-card > .title {
+  font-size: calc(12px + 1vw);
+  font-weight: 900;
+}
+
+.todo-preview-card > .description-short {
+  flex: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.todo-preview-card > .action-buttons-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.todo-preview-card button {
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+
+.todo-preview-card button::after {
+  content: " ";
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-bottom: 1px solid green;
+  transition: width 0.2s;
+}
+
+.todo-preview-card button:hover::after {
+  width: 80%;
+}
+.todo-preview-card > .action-buttons-wrapper > button > img {
+  content: url("../img/icons8-done-green.svg");
+  position: relative;
+  animation: jumping 0.5s ease-in-out 0.2s infinite alternate;
+}
+
+.todo-preview-card button:hover > img {
+  -webkit-animation-play-state: paused; /* Safari and Chrome */
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+@keyframes jumping {
+  0%,
+  30% {
+    top: 0px;
+  }
+
+  to {
+    top: -15px;
+  }
 }
