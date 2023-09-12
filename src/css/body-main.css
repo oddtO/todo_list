@@ -14,7 +14,6 @@ main > .todo-list {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  overflow: auto;
 }
 
 main .todo-preview-card {
@@ -35,8 +34,13 @@ main .todo-preview-card {
 }
 
 .todo-preview-card > .title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   font-size: calc(12px + 1vw);
   font-weight: 900;
+  word-break: break-word;
+  overflow: hidden;
 }
 
 .todo-preview-card > .description-short {
