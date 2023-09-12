@@ -35,10 +35,16 @@ aside .project {
   color: #000000;
   font-weight: bold;
   cursor: pointer;
+  font-size: calc(8px + 0.5vw);
 }
 
 aside .project > .heading {
+  padding-left: 20px;
+  overflow: hidden;
+  display: -webkit-box;
   word-break: break-word;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 aside .delete-button {
