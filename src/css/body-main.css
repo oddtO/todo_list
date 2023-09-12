@@ -10,8 +10,11 @@ main > .todo-list {
   flex: auto;
   align-self: stretch;
   padding: 20px;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
+  overflow: auto;
 }
 
 main .todo-preview-card {

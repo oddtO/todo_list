@@ -2,6 +2,7 @@ aside ul {
   width: 70%;
   display: grid;
   gap: 10px;
+  overflow: auto;
 }
 
 aside li {
@@ -49,4 +50,10 @@ aside .delete-button:hover {
 
 aside > * {
   margin-top: 20px;
+}
+
+aside > span {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 20px;
 }
