@@ -7,6 +7,7 @@ body > .blurrable {
   height: 100%;
   display: grid;
   grid-template: 60px auto / 1fr 3fr;
+  
 }
 
 body.popup-shown .blurrable {
@@ -28,6 +29,7 @@ body header {
   align-items: center;
   padding-left: 80px;
   font-size: 30px;
+
 }
 
 body aside {
@@ -38,6 +40,7 @@ body aside {
   flex-direction: column;
   align-items: center;
   background-color: #f0f0f0;
+  overflow: auto;
 }
 body main {
   background-color: #ffffff;

@@ -1,4 +1,5 @@
-import '../css/body-main.css';
+import "../css/mobile.css";
+import "../css/body-main.css";
 import "../css/body_editor.css";
 
 import "../css/reset.css";

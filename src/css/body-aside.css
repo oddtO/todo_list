@@ -8,6 +8,12 @@ aside ul {
   align-content: start;
   justify-items: center;
 }
+@media screen and (max-width: 800px) {
+  aside ul {
+    grid-auto-flow: column;
+    gap: 0;
+  }
+}
 
 aside li {
   display: flex;

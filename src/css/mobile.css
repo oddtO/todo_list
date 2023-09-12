@@ -1,0 +1,17 @@
+@media screen and (max-width: 800px) {
+  body > .blurrable {
+    grid-template: 60px 200px auto / auto !important;
+  }
+
+  body header {
+    padding-left: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  aside ul {
+    overflow-x: auto !important;
+	grid-auto-columns: 200px;
+    grid-auto-flow: column !important;
+    gap: 0 !important;
+  }
+}
