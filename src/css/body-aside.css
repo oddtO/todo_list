@@ -35,7 +35,7 @@ aside .project {
   color: #000000;
   font-weight: bold;
   cursor: pointer;
-  font-size: calc(8px + 0.5vw);
+  font-size: calc(10px + 0.5vw);
 }
 
 aside .project > .heading {

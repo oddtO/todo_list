@@ -1,6 +1,6 @@
 @media screen and (max-width: 700px) {
   body > .blurrable {
-    grid-template: 60px 200px auto / auto !important;
+    grid-template: 60px minmax(30px, auto) auto / auto !important;
   }
 
   body header {
@@ -15,8 +15,31 @@
     align-items: center !important;
     justify-items: stretch !important;
   }
-
+  aside {
+    position: relative;
+    padding-top: 20px;
+  }
+  aside > form {
+    margin-top: 35px;
+  }
+  aside::after {
+    position: absolute;
+    content: "...";
+    width: calc(30px + 0.4vw);
+    height: calc(30px + 0.4vw);
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    /* background-image: url("../img/icons8-delete.svg"); */
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; */
+    right: 0px;
+  }
   aside ul > li {
     width: 100%;
+  }
+
+  aside.hidden > * {
+    display: none;
   }
 }
