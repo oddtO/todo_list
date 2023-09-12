@@ -8,12 +8,6 @@ aside ul {
   align-content: start;
   justify-items: center;
 }
-@media screen and (max-width: 800px) {
-  aside ul {
-    grid-auto-flow: column;
-    gap: 0;
-  }
-}
 
 aside li {
   display: flex;
@@ -66,8 +60,9 @@ aside .delete-button {
 
 aside .delete-button img {
   content: url("../img/icons8-delete.svg");
-  width: 35px;
-  height: 35px;
+  --delete-button-size: calc(1em + 0.3vw);
+  width: var(--delete-button-size);
+  height: var(--delete-button-size);
 }
 
 aside .delete-button:hover > img {

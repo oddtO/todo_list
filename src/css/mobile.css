@@ -1,4 +1,4 @@
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   body > .blurrable {
     grid-template: 60px 200px auto / auto !important;
   }
@@ -10,8 +10,13 @@
   }
   aside ul {
     overflow-x: auto !important;
-	grid-auto-columns: 200px;
+    grid-auto-columns: 130px !important;
     grid-auto-flow: column !important;
-    gap: 0 !important;
+    align-items: center !important;
+    justify-items: stretch !important;
+  }
+
+  aside ul > li {
+    width: 100%;
   }
 }
