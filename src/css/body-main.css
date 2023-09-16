@@ -19,15 +19,16 @@ main > .todo-list {
 
 main > .todo-list::after {
   position: fixed;
-  bottom: 100px;
-  right: 150px;
+  bottom: 10%;
+  right: 8%;
   content: "";
   background-image: url("../img/icons8-add.svg");
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
   display: block;
-  --add-button-size: 100px;
+  --add-button-size: calc(50px + 2vw);
+  /* --add-button-size: 50px; */
   width: var(--add-button-size);
   height: var(--add-button-size);
 }
