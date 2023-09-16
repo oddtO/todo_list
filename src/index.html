@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body>
+  <body class="">
     <div class="blurrable">
       <header><a href="index.html">Todo Planner</a></header>
       <aside class="hidden">
@@ -38,9 +38,8 @@
         </span>
       </aside>
       <main>
-	<button class="add-card"><img/></button>
+        <button class="add-card"><img /></button>
         <ul class="todo-list">
-
           <li>
             <div
               class="todo-preview-card"
@@ -246,6 +245,7 @@
       </main>
     </div>
     <form action="" class="editor">
+      <button class="hide"><img /></button>
       <span>
         Icons by
         <a target="_blank" href="https://icons8.com">Icons8</a>
@@ -331,7 +331,8 @@
       </label>
 
       <div>
-        <input type="submit" value="Done" /><input
+			<input class="confirm" type="submit" value="Done">	
+        <input class="add-card" type="submit" value="Add card" /><input
           class="delete-todo"
           type="submit"
           value="Delete the todo"
