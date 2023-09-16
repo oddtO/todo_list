@@ -48,6 +48,12 @@ main .todo-preview-card {
   --box-shadow-color: #787878;
   box-shadow: 2px 2px 5px var(--box-shadow-color);
   position: relative;
+  transition: bottom 0.2s ease-in-out;
+  bottom: 0;
+}
+
+main .todo-preview-card:hover {
+  bottom: 15px;
 }
 
 .todo-preview-card > .title {
