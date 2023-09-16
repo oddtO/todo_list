@@ -14,6 +14,22 @@ main > .todo-list {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  position: relative;
+}
+
+main > .todo-list::after {
+  position: fixed;
+  bottom: 100px;
+  right: 150px;
+  content: "";
+  background-image: url("../img/icons8-add.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  display: block;
+  --add-button-size: 100px;
+  width: var(--add-button-size);
+  height: var(--add-button-size);
 }
 
 main .todo-preview-card {
@@ -31,6 +47,7 @@ main .todo-preview-card {
   cursor: pointer;
   --box-shadow-color: #787878;
   box-shadow: 2px 2px 5px var(--box-shadow-color);
+  position: relative;
 }
 
 .todo-preview-card > .title {
