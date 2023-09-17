@@ -1,5 +1,6 @@
 import * as Editor from "./editor";
-let cardList = [];
+import * as Card from "./card.js";
+import {render} from './render.js';
 export function setUpTodoApp() {
   let form = document.querySelector("form.editor");
 
@@ -12,4 +13,9 @@ export function setUpTodoApp() {
     docBody.classList.add("popup-shown");
     form.classList.add("new");
   });
+
+  form.addEventListener("new-card", () => {
+    render();
+  });
+
 }

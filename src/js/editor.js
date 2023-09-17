@@ -19,9 +19,10 @@ export function initEditorListeners(editorElem) {
       editorElem.title.value,
       editorElem["due-date"].value,
       editorElem.priority.value,
-      editorElem["is-completed"].checked,
       editorElem.description.value,
     );
+    let addCardEvent = new CustomEvent("new-card");
+    editorElem.dispatchEvent(addCardEvent);
     hideEditor();
   });
 
