@@ -1,5 +1,4 @@
-import * as Card from './card.js';
-
+import * as Card from "./card.js";
 
 let todoList = document.querySelector("ul.todo-list");
 export function render() {
@@ -17,9 +16,9 @@ function appendCardRendered(card, index) {
 		                class="todo-preview-card"
                 data-priority="${card.priority}"
   		    data-status="${
-            card.isCompleted
+            card["is-completed"]
               ? "completed"
-              : new Date() > card.dueDate
+              : new Date() > card["due-date"]
               ? "failed"
               : ""
           }"
@@ -33,7 +32,9 @@ function appendCardRendered(card, index) {
 					    ${card.description}
                 </div>
 
-                <time class="due-date">${card.dueDate.toLocaleString("en-US")};
+                <time class="due-date">${card["due-date"].toLocaleString(
+                  "en-US",
+                )}
 	                </time>
 
                 <div class="action-buttons-wrapper" title="mark as complete">

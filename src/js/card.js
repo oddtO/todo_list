@@ -8,9 +8,9 @@ function createCardFromInput(title, dueDate, priority, description) {
   return {
     id: crypto.randomUUID(),
     title,
-    dueDate: new Date(dueDate),
+    ["due-date"]: new Date(dueDate),
     priority,
-		isCompleted: false,
+    ["is-completed"]: false,
     description,
   };
 }
