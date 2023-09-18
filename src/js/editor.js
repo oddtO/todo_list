@@ -43,6 +43,16 @@ export function initEditorListeners(editorElem) {
       new FieldEditor(editorElem, editedCardLiElem),
     );
   }
+
+  let confirmBtn = editorElem.querySelector("input.confirm");
+  confirmBtn.addEventListener("click", (event) => 
+	{
+		event.preventDefault();	
+		hideEditor();
+		}
+
+	);
+
   function hideEditor() {
     document.body.className = "";
     editorElem.classList.remove("new");
@@ -61,4 +71,3 @@ export function displayCardInEditor(editorElem, cardLiElem) {
     input.disabled = true;
   }
 }
-
