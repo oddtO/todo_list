@@ -9,9 +9,21 @@ export function render() {
   }
 }
 
+export function reRenderCardElem(cardLiElem) {
+  let index = cardLiElem.firstElementChild.dataset.index;
+  let card = Card.cardList[index];
+  cardLiElem.firstElementChild.outerHTML = renderACard(card, index);
+}
+
 function appendCardRendered(card, index) {
   let li = document.createElement("li");
-  li.innerHTML = `
+  li.innerHTML = renderACard(card, index);
+
+  todoList.append(li);
+}
+
+function renderACard(card, index) {
+  return `
               <div
 		                class="todo-preview-card"
                 data-priority="${card.priority}"
@@ -42,6 +54,4 @@ function appendCardRendered(card, index) {
 				              </div>
               </div>
 		`;
-
-  todoList.append(li);
 }

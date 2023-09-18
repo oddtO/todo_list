@@ -1,5 +1,7 @@
 import * as Card from "./card.js";
 
+let editedCardLiElem = Symbol("edited-card");
+
 export function initEditorListeners(editorElem) {
   let cancelBtn = editorElem.querySelector("button.hide");
   let addBtn = editorElem.querySelector("input.add-card");
@@ -24,6 +26,13 @@ export function initEditorListeners(editorElem) {
     let addCardEvent = new CustomEvent("new-card");
     editorElem.dispatchEvent(addCardEvent);
     hideEditor();
+  });
+
+  let isCompletedCheckbox = editorElem.querySelector('[name="is-completed"]');
+  isCompletedCheckbox.addEventListener("change", (event) => {
+    Card.cardList[editorElem.dataset.editingIndex][isCompletedCheckbox.name] =
+      isCompletedCheckbox.checked;
+    askReRender(editorElem);
   });
 
   let editButtonsAll = editorElem.querySelectorAll("label ul");
@@ -53,10 +62,11 @@ export function initEditorListeners(editorElem) {
           this.disableField();
         }
         saveEditField() {
-			Card.cardList[editorElem.dataset.editingIndex][this.input.name] = this.input[getValueFieldName(this.input)];
-					this.disableField();
-
-				}
+          Card.cardList[editorElem.dataset.editingIndex][this.input.name] =
+            this.input[getValueFieldName(this.input)];
+          this.disableField();
+          askReRender(editorElem);
+        }
         disableField() {
           this.inputLabel.classList.remove("on-edit");
           this.input.disabled = true;
@@ -70,10 +80,11 @@ export function initEditorListeners(editorElem) {
   }
 }
 
-export function displayCardInEditor(editorElem, cardElem) {
+export function displayCardInEditor(editorElem, cardLiElem) {
   let inputs = editorElem.querySelectorAll("[name]");
-  let card = Card.cardList[cardElem.dataset.index];
-  editorElem.dataset.editingIndex = cardElem.dataset.index;
+  let card = Card.cardList[cardLiElem.firstElementChild.dataset.index];
+  editorElem.dataset.editingIndex = cardLiElem.firstElementChild.dataset.index;
+  editorElem[editedCardLiElem] = cardLiElem;
   for (const input of inputs) {
     let value = card[input.name];
     input[getValueFieldName(input)] = value;
@@ -87,4 +98,12 @@ function getValueFieldName(input) {
 
   if (input.matches('[type="checkbox"]')) return "checked";
   return "value";
+}
+
+function askReRender(editorElem) {
+  editorElem.dispatchEvent(
+    new CustomEvent("card-change", {
+      detail: { cardLiElem: editorElem[editedCardLiElem] },
+    }),
+  );
 }

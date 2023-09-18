@@ -1,6 +1,6 @@
 import * as Editor from "./editor";
 import * as Card from "./card.js";
-import { render } from "./render.js";
+import { render, reRenderCardElem } from "./render.js";
 export function setUpTodoApp() {
   let form = document.querySelector("form.editor");
 
@@ -18,6 +18,10 @@ export function setUpTodoApp() {
     render();
   });
 
+  form.addEventListener("card-change", (event) => {
+    reRenderCardElem(event.detail.cardLiElem);
+  });
+
   let todoList = document.querySelector("ul.todo-list");
 
   todoList.addEventListener("click", (event) => {
@@ -25,10 +29,8 @@ export function setUpTodoApp() {
     if (target instanceof HTMLButtonElement) return;
     let cardElem = target.closest(".todo-preview-card");
     if (!cardElem) return;
-	
-    docBody.classList.add("popup-shown");
-	Editor.displayCardInEditor(form, cardElem);
-	
-  });
 
+    docBody.classList.add("popup-shown");
+    Editor.displayCardInEditor(form, cardElem.parentElement);
+  });
 }
