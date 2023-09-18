@@ -253,16 +253,30 @@
       <label for="title"
         ><h2 class="title">Title:</h2>
         <div>
-          <input type="text" name="title" id="title" required/>
+          <input type="text" name="title" id="title" required />
           <ul>
             <li>
-              <button class="edit" title="edit"><img /></button>
+              <button class="edit" title="edit" data-action="editField">
+                <img />
+              </button>
             </li>
             <li>
-              <button class="cancel-edit" title="cancel"><img /></button>
+              <button
+                class="cancel-edit"
+                title="cancel"
+                data-action="cancelEditField"
+              >
+                <img />
+              </button>
             </li>
             <li>
-              <button class="save-edit" title="save"><img /></button>
+              <button
+                class="save-edit"
+                title="save"
+                data-action="saveEditField"
+              >
+                <img />
+              </button>
             </li>
           </ul></div
       ></label>
@@ -270,17 +284,31 @@
       <label for="due-date"
         ><h2 class="title">Due date:</h2>
         <div>
-          <input type="date" name="due-date" id="due-date" required/>
+          <input type="date" name="due-date" id="due-date" required />
 
           <ul>
             <li>
-              <button class="edit" title="edit"><img /></button>
+              <button class="edit" title="edit" data-action="editField">
+                <img />
+              </button>
             </li>
             <li>
-              <button class="cancel-edit" title="cancel"><img /></button>
+              <button
+                class="cancel-edit"
+                title="cancel"
+                data-action="cancelEditField"
+              >
+                <img />
+              </button>
             </li>
             <li>
-              <button class="save-edit" title="save"><img /></button>
+              <button
+                class="save-edit"
+                title="save"
+                data-action="saveEditField"
+              >
+                <img />
+              </button>
             </li>
           </ul></div
       ></label>
@@ -296,13 +324,27 @@
           </select>
           <ul>
             <li>
-              <button class="edit" title="edit"><img /></button>
+              <button class="edit" title="edit" data-action="editField">
+                <img />
+              </button>
             </li>
             <li>
-              <button class="cancel-edit" title="cancel"><img /></button>
+              <button
+                class="cancel-edit"
+                title="cancel"
+                data-action="cancelEditField"
+              >
+                <img />
+              </button>
             </li>
             <li>
-              <button class="save-edit" title="save"><img /></button>
+              <button
+                class="save-edit"
+                title="save"
+                data-action="saveEditField"
+              >
+                <img />
+              </button>
             </li>
           </ul></div
       ></label>
@@ -318,20 +360,34 @@
 
           <ul>
             <li>
-              <button class="edit" title="edit"><img /></button>
+              <button class="edit" title="edit" data-action="editField">
+                <img />
+              </button>
             </li>
             <li>
-              <button class="cancel-edit" title="cancel"><img /></button>
+              <button
+                class="cancel-edit"
+                title="cancel"
+                data-action="cancelEditField"
+              >
+                <img />
+              </button>
             </li>
             <li>
-              <button class="save-edit" title="save"><img /></button>
+              <button
+                class="save-edit"
+                title="save"
+                data-action="saveEditField"
+              >
+                <img />
+              </button>
             </li>
           </ul>
         </div>
       </label>
 
       <div>
-			<input class="confirm" type="submit" value="Done">	
+        <input class="confirm" type="submit" value="Done" />
         <input class="add-card" type="submit" value="Add card" /><input
           class="delete-todo"
           type="submit"
