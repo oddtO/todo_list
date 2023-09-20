@@ -53,6 +53,14 @@ export function initEditorListeners(editorElem) {
   function hideEditor() {
     document.body.className = "";
     editorElem.classList.remove("new");
+    clearEditor();
+
+    function clearEditor() {
+      editorElem.querySelectorAll("[name]").forEach((input) => {
+        input[getValueFieldName(input)] = null;
+        input.disabled = false;
+      });
+    }
   }
 }
 

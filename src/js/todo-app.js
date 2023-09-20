@@ -30,10 +30,12 @@ export function setUpTodoApp() {
     if (!cardLiElem) return;
 
     if (target instanceof HTMLButtonElement) {
-		Card.cardList[cardLiElem.firstElementChild.dataset.index]['is-completed'] = true;	
-			reRenderCardElem(cardLiElem);
-			return;
-		};
+      Card.cardList[cardLiElem.firstElementChild.dataset.index][
+        "is-completed"
+      ] = true;
+      reRenderCardElem(cardLiElem);
+      return;
+    }
 
     docBody.classList.add("popup-shown");
     Editor.displayCardInEditor(form, cardLiElem);
