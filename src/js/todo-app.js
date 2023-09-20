@@ -26,11 +26,16 @@ export function setUpTodoApp() {
 
   todoList.addEventListener("click", (event) => {
     let target = event.target;
-    if (target instanceof HTMLButtonElement) return;
-    let cardElem = target.closest(".todo-preview-card");
-    if (!cardElem) return;
+    let cardLiElem = target.closest(".todo-preview-card").parentElement;
+    if (!cardLiElem) return;
+
+    if (target instanceof HTMLButtonElement) {
+		Card.cardList[cardLiElem.firstElementChild.dataset.index]['is-completed'] = true;	
+			reRenderCardElem(cardLiElem);
+			return;
+		};
 
     docBody.classList.add("popup-shown");
-    Editor.displayCardInEditor(form, cardElem.parentElement);
+    Editor.displayCardInEditor(form, cardLiElem);
   });
 }

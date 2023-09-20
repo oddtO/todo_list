@@ -45,13 +45,10 @@ export function initEditorListeners(editorElem) {
   }
 
   let confirmBtn = editorElem.querySelector("input.confirm");
-  confirmBtn.addEventListener("click", (event) => 
-	{
-		event.preventDefault();	
-		hideEditor();
-		}
-
-	);
+  confirmBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    hideEditor();
+  });
 
   function hideEditor() {
     document.body.className = "";
