@@ -33,7 +33,7 @@ export function setUpTodoApp() {
 
   todoList.addEventListener("click", (event) => {
     let target = event.target;
-    let cardLiElem = target.closest(".todo-preview-card").parentElement;
+    let cardLiElem = target.closest(".todo-preview-card")?.parentElement;
     if (!cardLiElem) return;
 
     if (target instanceof HTMLButtonElement) {
