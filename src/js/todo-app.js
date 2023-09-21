@@ -22,6 +22,13 @@ export function setUpTodoApp() {
     reRenderCardElem(event.detail.cardLiElem);
   });
 
+  form.addEventListener("card-delete", (event) => {
+    let elemToDelete = event.detail.cardElemToBeDeleted;
+    let cardIndexToDelete = elemToDelete.dataset.index;
+    Card.cardList.splice(cardIndexToDelete, 1);
+	render();
+  });
+
   let todoList = document.querySelector("ul.todo-list");
 
   todoList.addEventListener("click", (event) => {

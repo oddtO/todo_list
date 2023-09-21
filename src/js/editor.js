@@ -62,6 +62,18 @@ export function initEditorListeners(editorElem) {
       });
     }
   }
+
+  let deleteBtn = editorElem.querySelector("input.delete-todo");
+
+  deleteBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    editorElem.dispatchEvent(
+      new CustomEvent("card-delete", {
+        detail: { cardElemToBeDeleted: editorElem[editedCardLiElem] },
+      }),
+    );
+    hideEditor();
+  });
 }
 
 export function displayCardInEditor(editorElem, cardLiElem) {
