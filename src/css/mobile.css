@@ -1,6 +1,6 @@
 @media screen and (max-width: 700px) {
   body > .blurrable {
-    grid-template: 60px minmax(30px, auto) auto / auto !important;
+    grid-template: 60px minmax(80px, auto) auto / auto !important;
   }
 
   body header {
@@ -22,24 +22,30 @@
   aside > form {
     margin-top: 35px;
   }
-  aside::after {
+  aside > button.expand {
     position: absolute;
-    content: "...";
     width: calc(30px + 0.4vw);
     height: calc(30px + 0.4vw);
-    display: flex;
-    align-items: center;
-    font-weight: 900;
+    display: flex !important;
+    font-size: 30px;
+    align-items: start;
+    justify-content: center;
     /* background-image: url("../img/icons8-delete.svg"); */
     /* background-repeat: no-repeat; */
     /* background-size: contain; */
+    top: -29px;
     right: 0px;
+    border: none;
   }
   aside ul > li {
     width: 100%;
   }
 
-  aside.hidden-on-mobile > * {
+  aside.hidden-on-mobile > *:not(button) {
     display: none;
+  }
+
+  aside.hidden-on-mobile {
+    height: 30px;
   }
 }

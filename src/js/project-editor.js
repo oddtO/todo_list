@@ -1,6 +1,10 @@
 import * as Project from "./project.js";
 
 export function initEventListeners(projectEditor) {
+	let expandBtn = projectEditor.querySelector('button.expand');
+	expandBtn.addEventListener("click", () => {
+		projectEditor.classList.toggle('hidden-on-mobile');
+	})
   let addBtn = projectEditor.querySelector("aside > form");
   addBtn.addEventListener("submit", (event) => {
     let form = event.target;

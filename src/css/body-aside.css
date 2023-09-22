@@ -8,6 +8,9 @@ aside ul {
   align-content: start;
   justify-items: center;
 }
+aside > button {
+  display: none;
+}
 
 aside li {
   display: flex;
