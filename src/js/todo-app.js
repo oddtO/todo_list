@@ -19,6 +19,10 @@ export function setUpTodoApp() {
 
   let docBody = document.body;
   addButton.addEventListener("click", () => {
+		if(!Project.isProjectSelected()) {
+			alert("Please, select a project or create one");
+			return;
+		}
     docBody.classList.add("popup-shown");
     form.classList.add("new");
   });
@@ -74,7 +78,6 @@ export function setUpTodoApp() {
   projectAside.addEventListener("delete-project", (event) => {
     Project.deleteProjectAt(event.detail.projectIndex);
     renderProjectList();
-		if(event.detail.isSelected)
-    clearList();
+    if (event.detail.isSelected) clearList();
   });
 }

@@ -1,8 +1,12 @@
 let projectList = [];
-let currentProjectIndex = 0;
+let currentProjectIndex = null;
 
 export function isProjectSelectedAt(index) {
   return index == currentProjectIndex;
+}
+
+export function isProjectSelected() {
+  return currentProjectIndex !== null;
 }
 
 export function setSelectedProjectIndex(index) {
@@ -13,10 +17,9 @@ export function deleteProjectAt(index) {
   projectList.splice(index, 1);
   if (isProjectSelectedAt(index)) {
     currentProjectIndex = null;
+  } else if (currentProjectIndex > index) {
+    currentProjectIndex -= 1;
   }
-	else if(currentProjectIndex > index) {
-		currentProjectIndex -= 1;
-	}
 }
 
 export function getProjectListLength() {
@@ -33,5 +36,5 @@ export function getSelectedProject() {
 
 export function addProject(name) {
   projectList.push({ name, cardList: [] });
-  currentProjectIndex = projectList.length - 1;
+  currentProjectIndex = currentProjectIndex ? projectList.length - 1 : 0;
 }
