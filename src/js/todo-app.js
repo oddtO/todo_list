@@ -11,8 +11,13 @@ import {
 } from "./render.js";
 import { projectList } from "./project";
 export function setUpTodoApp() {
-	renderProjectList();
-	render();
+  try {
+    renderProjectList();
+    render();
+  } catch (error) {
+    if (error instanceof Project.NoProjectSelectedError)
+      alert(error.message);
+  }
   let form = document.querySelector("form.editor");
 
   Editor.initEditorListeners(form);
@@ -52,9 +57,14 @@ export function setUpTodoApp() {
     if (!cardLiElem) return;
 
     if (target instanceof HTMLButtonElement) {
-      Card.getCurProjectCard(cardLiElem.firstElementChild.dataset.index)[
+      /* Card.getCurProjectCard(cardLiElem.firstElementChild.dataset.index)[
         "is-completed"
-      ] = true;
+      ] = true; */
+      Card.updateCard(
+        cardLiElem.firstElementChild.dataset.index,
+        "is-completed",
+        true,
+      );
       reRenderCardElem(cardLiElem);
       return;
     }

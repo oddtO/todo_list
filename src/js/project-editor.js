@@ -29,7 +29,7 @@ export function initEventListeners(projectEditor) {
       new CustomEvent(
         target.matches("img") ? "delete-project" : "change-project",
         {
-          detail: { projectIndex: projectElem.dataset.index, isSelected },
+          detail: { projectIndex: +projectElem.dataset.index, isSelected },
         },
       ),
     );

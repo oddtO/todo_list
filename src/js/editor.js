@@ -31,9 +31,10 @@ export function initEditorListeners(editorElem) {
 
   let isCompletedCheckbox = editorElem.querySelector('[name="is-completed"]');
   isCompletedCheckbox.addEventListener("change", (event) => {
-    Card.getCurProjectCard(editorElem.dataset.editingIndex)[
+    /* Card.getCurProjectCard(editorElem.dataset.editingIndex)[
       isCompletedCheckbox.name
-    ] = isCompletedCheckbox.checked;
+    ] = isCompletedCheckbox.checked; */
+	Card.updateCard(editorElem.dataset.editingIndex, isCompletedCheckbox.name, isCompletedCheckbox.checked)	
     askReRender(editorElem, editedCardLiElem);
   });
 

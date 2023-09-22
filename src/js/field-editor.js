@@ -27,9 +27,10 @@ export class FieldEditor {
     this.disableField();
   }
   saveEditField() {
-    Card.getCurProjectCard(this.editorElem.dataset.editingIndex)[
+    /* Card.getCurProjectCard(this.editorElem.dataset.editingIndex)[
       this.input.name
-    ] = this.input[getValueFieldName(this.input)];
+    ] = this.input[getValueFieldName(this.input)]; */
+		Card.updateCard(this.editorElem.dataset.editingIndex, this.input.name, this.input[getValueFieldName(this.input)])
     this.disableField();
     askReRender(this.editorElem, this.editedCardLiElem);
   }
