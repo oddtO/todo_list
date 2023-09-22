@@ -1,6 +1,6 @@
 @media screen and (max-width: 700px) {
   body > .blurrable {
-    grid-template: 60px minmax(80px, auto) auto / auto !important;
+    grid-template: 60px minmax(80px, 2fr) 3fr / auto !important;
   }
 
   body header {
