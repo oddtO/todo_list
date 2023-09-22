@@ -61,17 +61,17 @@ function renderACard(card, index) {
 export function renderProjectList() {
   projectList.innerHTML = "";
 
-  for (let i = 0; i < Project.projectList.length; ++i) {
+  for (let i = 0; i < Project.getProjectListLength(); ++i) {
     projectList.insertAdjacentHTML(
       "beforeend",
-      renderAproject(Project.projectList[i]),
+      renderAproject(Project.getProjectAt(i), i == Project.getCurrentProjectIndex()),
     );
   }
 }
 
-function renderAproject(project) {
+function renderAproject(project, isSelected) {
   return `
-          <li>
+          <li data-selected="${isSelected ? "true" : "false"}">
             <div class="project">
               <h2 class="heading">
 			${project.name}
