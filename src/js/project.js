@@ -1,9 +1,5 @@
-let projectList = localStorage.getItem("project-list") || [{
-
-	name: "default",
-	cardList: [],
-}];
-let currentProjectIndex = 0;
+let projectList = [];
+let currentProjectIndex = null;
 
 export function isProjectSelectedAt(index) {
   return index == currentProjectIndex;

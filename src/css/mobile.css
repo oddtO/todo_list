@@ -1,15 +1,12 @@
 @media screen and (max-width: 700px) {
   body > .blurrable {
-    /* grid-template: 60px minmax(80px, 2fr) 3fr / auto !important; */
-    display: flex !important;
-    flex-direction: column;
+    grid-template: 60px minmax(80px, 2fr) 3fr / auto !important;
   }
 
   body header {
     padding-left: 0 !important;
     display: flex !important;
     justify-content: center !important;
-    height: 60px;
   }
   aside ul {
     overflow-x: auto !important;
@@ -21,9 +18,6 @@
   aside {
     position: relative;
     padding-top: 20px;
-  }
-  aside .project {
-	padding: 0 !important;
   }
   aside > form {
     margin-top: 35px;
