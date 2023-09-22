@@ -4,11 +4,15 @@ import * as Project from "./project.js";
 let todoList = document.querySelector("ul.todo-list");
 let projectList = document.querySelector("aside > ul");
 export function render() {
-  todoList.innerHTML = "";
-
+	clearList();
   for (let i = 0; i < Card.getCurProjectCardListSize(); ++i) {
     appendCardRendered(Card.getCurProjectCard(i), i);
   }
+}
+
+export function clearList() {
+
+  todoList.innerHTML = "";
 }
 
 export function reRenderCardElem(cardLiElem) {

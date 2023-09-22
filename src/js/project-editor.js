@@ -15,13 +15,17 @@ export function initEventListeners(projectEditor) {
   let projectElemList = projectEditor.querySelector("aside > ul");
   projectElemList.addEventListener("click", (event) => {
     let target = event.target;
-    if (target instanceof HTMLButtonElement) return;
     let projectElem = target.closest("li");
-    if (!projectElem || projectElem.dataset.selected == "true") return;
+    if (!projectElem) return;
+
+    let isSelected = projectElem.dataset.selected == "true";
     projectEditor.dispatchEvent(
-      new CustomEvent("change-project", {
-        detail: { projectIndex: projectElem.dataset.index },
-      }),
+      new CustomEvent(
+        target.matches("img") ? "delete-project" : "change-project",
+        {
+          detail: { projectIndex: projectElem.dataset.index, isSelected },
+        },
+      ),
     );
   });
 }

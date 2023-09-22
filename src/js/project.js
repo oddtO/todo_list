@@ -9,6 +9,16 @@ export function setSelectedProjectIndex(index) {
   currentProjectIndex = index;
 }
 
+export function deleteProjectAt(index) {
+  projectList.splice(index, 1);
+  if (isProjectSelectedAt(index)) {
+    currentProjectIndex = null;
+  }
+	else if(currentProjectIndex > index) {
+		currentProjectIndex -= 1;
+	}
+}
+
 export function getProjectListLength() {
   return projectList.length;
 }

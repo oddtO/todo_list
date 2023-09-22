@@ -3,7 +3,12 @@ import * as ProjectEditor from "./project-editor.js";
 import * as Card from "./card.js";
 import * as Project from "./project.js";
 
-import { render, reRenderCardElem, renderProjectList } from "./render.js";
+import {
+  render,
+  reRenderCardElem,
+  renderProjectList,
+  clearList,
+} from "./render.js";
 import { projectList } from "./project";
 export function setUpTodoApp() {
   let form = document.querySelector("form.editor");
@@ -57,12 +62,19 @@ export function setUpTodoApp() {
   projectAside.addEventListener("add-project", (event) => {
     Project.addProject(event.detail.projectName);
     renderProjectList();
-		render();
+    render();
   });
 
   projectAside.addEventListener("change-project", (event) => {
     Project.setSelectedProjectIndex(event.detail.projectIndex);
     renderProjectList();
     render();
+  });
+
+  projectAside.addEventListener("delete-project", (event) => {
+    Project.deleteProjectAt(event.detail.projectIndex);
+    renderProjectList();
+		if(event.detail.isSelected)
+    clearList();
   });
 }
