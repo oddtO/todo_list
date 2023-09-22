@@ -1,6 +1,8 @@
 import * as Card from "./card.js";
+import * as Project from "./project.js";
 
 let todoList = document.querySelector("ul.todo-list");
+let projectList = document.querySelector("aside > ul");
 export function render() {
   todoList.innerHTML = "";
 
@@ -54,4 +56,28 @@ function renderACard(card, index) {
 				              </div>
               </div>
 		`;
+}
+
+export function renderProjectList() {
+  projectList.innerHTML = "";
+
+  for (let i = 0; i < Project.projectList.length; ++i) {
+    projectList.insertAdjacentHTML(
+      "beforeend",
+      renderAproject(Project.projectList[i]),
+    );
+  }
+}
+
+function renderAproject(project) {
+  return `
+          <li>
+            <div class="project">
+              <h2 class="heading">
+			${project.name}
+              </h2>
+            </div>
+            <button class="delete-button"><img /></button>
+          </li>
+	`;
 }
