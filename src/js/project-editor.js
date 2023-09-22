@@ -1,10 +1,12 @@
 import * as Project from "./project.js";
 
 export function initEventListeners(projectEditor) {
-  let addBtn = projectEditor.querySelector('input[type="submit"]');
-  addBtn.addEventListener("click", (event) => {
+  let addBtn = projectEditor.querySelector("aside > form");
+  addBtn.addEventListener("submit", (event) => {
+    let form = event.target;
+    let addProjectNameField = form["add-project-name"];
+    if (!addProjectNameField.checkValidity()) return;
     event.preventDefault();
-    let addProjectNameField = event.target.form["add-project-name"];
     let projectName = addProjectNameField.value;
     addProjectNameField.value = "";
     projectEditor.dispatchEvent(

@@ -39,7 +39,7 @@
     width: 100%;
   }
 
-  aside.hidden > * {
+  aside.hidden-on-mobile > * {
     display: none;
   }
 }
