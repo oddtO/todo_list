@@ -52,7 +52,12 @@ export function initEditorListeners(editorElem) {
 
   function hideEditor() {
     document.body.className = "";
-    editorElem.classList.remove("new");
+		let computedStyle = getComputedStyle(editorElem);
+    setTimeout(
+      () => editorElem.classList.remove("new"),
+      (parseFloat(computedStyle.transitionDelay) + parseFloat(computedStyle.transitionDuration)) * 1000,
+    );
+
     clearEditor();
 
     function clearEditor() {
