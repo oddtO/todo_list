@@ -7,7 +7,7 @@ import { render, reRenderCardElem, renderProjectList } from "./render.js";
 import { projectList } from "./project";
 export function setUpTodoApp() {
   let form = document.querySelector("form.editor");
-	
+
   Editor.initEditorListeners(form);
 
   let addButton = document.querySelector("button.add-card");
@@ -27,9 +27,9 @@ export function setUpTodoApp() {
   });
 
   form.addEventListener("card-delete", (event) => {
-    let elemToDelete = event.detail.cardElemToBeDeleted;
-    let cardIndexToDelete = elemToDelete.dataset.index;
-    Card.cardList.splice(cardIndexToDelete, 1);
+    let elemLiToDelete = event.detail.cardElemToBeDeleted;
+    let cardIndexToDelete = elemLiToDelete.firstElementChild.dataset.index;
+    Card.deleteCard(cardIndexToDelete);
     render();
   });
 
@@ -41,7 +41,7 @@ export function setUpTodoApp() {
     if (!cardLiElem) return;
 
     if (target instanceof HTMLButtonElement) {
-      Card.cardList[cardLiElem.firstElementChild.dataset.index][
+      Card.getCurProjectCardList(cardLiElem.firstElementChild.dataset.index)[
         "is-completed"
       ] = true;
       reRenderCardElem(cardLiElem);
@@ -52,7 +52,7 @@ export function setUpTodoApp() {
     Editor.displayCardInEditor(form, cardLiElem);
   });
 
-let projectAside = document.querySelector('aside');
+  let projectAside = document.querySelector("aside");
   ProjectEditor.initEventListeners(projectAside);
   projectAside.addEventListener("add-project", (event) => {
     Project.addProject(event.detail.projectName);

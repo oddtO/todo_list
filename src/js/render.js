@@ -6,14 +6,14 @@ let projectList = document.querySelector("aside > ul");
 export function render() {
   todoList.innerHTML = "";
 
-  for (let i = 0; i < Card.cardList.length; ++i) {
-    appendCardRendered(Card.cardList[i], i);
+  for (let i = 0; i < Card.getCurProjectCardListSize(); ++i) {
+    appendCardRendered(Card.getCurProjectCardList(i), i);
   }
 }
 
 export function reRenderCardElem(cardLiElem) {
   let index = cardLiElem.firstElementChild.dataset.index;
-  let card = Card.cardList[index];
+  let card = Card.getCurProjectCardList(index);
   cardLiElem.firstElementChild.outerHTML = renderACard(card, index);
 }
 

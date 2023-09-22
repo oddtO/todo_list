@@ -23,12 +23,13 @@ export class FieldEditor {
   }
   cancelEditField() {
     this.input[getValueFieldName(this.input)] =
-      Card.cardList[this.editorElem.dataset.editingIndex][this.input.name];
+      Card.getCurProjectCardList(this.editorElem.dataset.editingIndex)[this.input.name];
     this.disableField();
   }
   saveEditField() {
-    Card.cardList[this.editorElem.dataset.editingIndex][this.input.name] =
-      this.input[getValueFieldName(this.input)];
+    Card.getCurProjectCardList(this.editorElem.dataset.editingIndex)[
+      this.input.name
+    ] = this.input[getValueFieldName(this.input)];
     this.disableField();
     askReRender(this.editorElem, this.editedCardLiElem);
   }
