@@ -11,6 +11,8 @@ import {
 } from "./render.js";
 import { projectList } from "./project";
 export function setUpTodoApp() {
+	renderProjectList();
+	render();
   let form = document.querySelector("form.editor");
 
   Editor.initEditorListeners(form);
@@ -19,10 +21,10 @@ export function setUpTodoApp() {
 
   let docBody = document.body;
   addButton.addEventListener("click", () => {
-		if(!Project.isProjectSelected()) {
-			alert("Please, select a project or create one");
-			return;
-		}
+    if (!Project.isProjectSelected()) {
+      alert("Please, select a project or create one");
+      return;
+    }
     docBody.classList.add("popup-shown");
     form.classList.add("new");
   });
