@@ -23,11 +23,11 @@ export class FieldEditor {
   }
   cancelEditField() {
     this.input[getValueFieldName(this.input)] =
-      Card.getCurProjectCardList(this.editorElem.dataset.editingIndex)[this.input.name];
+      Card.getCurProjectCard(this.editorElem.dataset.editingIndex)[this.input.name];
     this.disableField();
   }
   saveEditField() {
-    Card.getCurProjectCardList(this.editorElem.dataset.editingIndex)[
+    Card.getCurProjectCard(this.editorElem.dataset.editingIndex)[
       this.input.name
     ] = this.input[getValueFieldName(this.input)];
     this.disableField();

@@ -41,7 +41,7 @@ export function setUpTodoApp() {
     if (!cardLiElem) return;
 
     if (target instanceof HTMLButtonElement) {
-      Card.getCurProjectCardList(cardLiElem.firstElementChild.dataset.index)[
+      Card.getCurProjectCard(cardLiElem.firstElementChild.dataset.index)[
         "is-completed"
       ] = true;
       reRenderCardElem(cardLiElem);
@@ -57,5 +57,12 @@ export function setUpTodoApp() {
   projectAside.addEventListener("add-project", (event) => {
     Project.addProject(event.detail.projectName);
     renderProjectList();
+		render();
+  });
+
+  projectAside.addEventListener("change-project", (event) => {
+    Project.setSelectedProjectIndex(event.detail.projectIndex);
+    renderProjectList();
+    render();
   });
 }

@@ -1,8 +1,12 @@
 let projectList = [];
 let currentProjectIndex = 0;
 
-export function getCurrentProjectIndex() {
-  return currentProjectIndex;
+export function isProjectSelectedAt(index) {
+  return index == currentProjectIndex;
+}
+
+export function setSelectedProjectIndex(index) {
+  currentProjectIndex = index;
 }
 
 export function getProjectListLength() {
@@ -10,7 +14,11 @@ export function getProjectListLength() {
 }
 
 export function getProjectAt(index) {
-	return projectList[index];
+  return projectList[index];
+}
+
+export function getSelectedProject() {
+  return projectList[currentProjectIndex];
 }
 
 export function addProject(name) {

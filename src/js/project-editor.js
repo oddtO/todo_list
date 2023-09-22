@@ -7,6 +7,21 @@ export function initEventListeners(projectEditor) {
     let addProjectNameField = event.target.form["add-project-name"];
     let projectName = addProjectNameField.value;
     addProjectNameField.value = "";
-	projectEditor.dispatchEvent(new CustomEvent('add-project', {detail: {projectName}}))
+    projectEditor.dispatchEvent(
+      new CustomEvent("add-project", { detail: { projectName } }),
+    );
+  });
+
+  let projectElemList = projectEditor.querySelector("aside > ul");
+  projectElemList.addEventListener("click", (event) => {
+    let target = event.target;
+    if (target instanceof HTMLButtonElement) return;
+    let projectElem = target.closest("li");
+    if (!projectElem || projectElem.dataset.selected == "true") return;
+    projectEditor.dispatchEvent(
+      new CustomEvent("change-project", {
+        detail: { projectIndex: projectElem.dataset.index },
+      }),
+    );
   });
 }

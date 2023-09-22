@@ -1,23 +1,22 @@
-import * as Project from "./project.js";
+import {getSelectedProject} from "./project.js";
 
-let cardList = [];
-
-export function getCurProjectCardList(index) {
-  return cardList[index];
+export function getCurProjectCard(index) {
+  return getSelectedProject().cardList[index];
+  // return cardList[index];
 }
 
 export function getCurProjectCardListSize() {
-  return cardList.length;
+  return getSelectedProject().cardList.length;
 }
 
 export function deleteCard(index) {
-	cardList.splice(index, 1);
-
+  getSelectedProject().cardList.splice(index, 1);
 }
 
-
 export function addNewCard(title, dueDate, priority, description) {
-  cardList.push(createCardFromInput(title, dueDate, priority, description));
+  getSelectedProject().cardList.push(
+    createCardFromInput(title, dueDate, priority, description),
+  );
 }
 
 function createCardFromInput(title, dueDate, priority, description) {

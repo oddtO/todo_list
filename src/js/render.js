@@ -7,13 +7,13 @@ export function render() {
   todoList.innerHTML = "";
 
   for (let i = 0; i < Card.getCurProjectCardListSize(); ++i) {
-    appendCardRendered(Card.getCurProjectCardList(i), i);
+    appendCardRendered(Card.getCurProjectCard(i), i);
   }
 }
 
 export function reRenderCardElem(cardLiElem) {
   let index = cardLiElem.firstElementChild.dataset.index;
-  let card = Card.getCurProjectCardList(index);
+  let card = Card.getCurProjectCard(index);
   cardLiElem.firstElementChild.outerHTML = renderACard(card, index);
 }
 
@@ -64,14 +64,20 @@ export function renderProjectList() {
   for (let i = 0; i < Project.getProjectListLength(); ++i) {
     projectList.insertAdjacentHTML(
       "beforeend",
-      renderAproject(Project.getProjectAt(i), i == Project.getCurrentProjectIndex()),
+      renderAproject(
+        Project.getProjectAt(i),
+        i,
+        Project.isProjectSelectedAt(i),
+      ),
     );
   }
 }
 
-function renderAproject(project, isSelected) {
+function renderAproject(project, indexRef, isSelected) {
   return `
-          <li data-selected="${isSelected ? "true" : "false"}">
+          <li data-index='${indexRef}' data-selected="${
+            isSelected ? "true" : "false"
+          }">
             <div class="project">
               <h2 class="heading">
 			${project.name}
