@@ -96,6 +96,10 @@ main .todo-preview-card:hover {
   position: relative;
 }
 
+button {
+	user-select: none;
+}
+
 .todo-preview-card button::after {
   content: " ";
   width: 60%;
